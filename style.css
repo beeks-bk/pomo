@@ -1,0 +1,192 @@
+:root {
+    --primary-white: #ffffff;
+    --primary-violet: #2b174a;
+    --accent-violet: #462875;
+    --bg-gradient: linear-gradient(135deg, #fdfbfd, #ece9f0);
+    --viewer-bg: #B0B0B0; /* Matching the image background gray */
+    --text-grey: #555;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--primary-violet);
+    height: 100vh; /* Fix to viewport height */
+    overflow: hidden; /* Prevent body scroll */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    flex: 0 0 auto; /* Don't shrink or grow */
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(43, 23, 74, 0.1);
+    z-index: 20;
+}
+
+.main-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Main Layout Container */
+.main-container {
+    flex: 1 1 auto; /* Take remaining height */
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+/* Side Columns (Scrollable) */
+.side-column {
+    flex: 1; /* Take 1 part width */
+    overflow-y: auto; /* Independent vertical scroll */
+    padding: 20px;
+    /* Scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-violet) transparent;
+}
+
+.side-column::-webkit-scrollbar { width: 6px; }
+.side-column::-webkit-scrollbar-thumb {
+    background-color: var(--primary-violet);
+    border-radius: 3px;
+}
+
+/* Port Boxes */
+.port-box {
+    background: var(--primary-white);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(43, 23, 74, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.port-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(43, 23, 74, 0.12);
+}
+
+.port-box h2 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--primary-violet);
+}
+
+.port-box p {
+    font-size: 0.9rem;
+    color: var(--text-grey);
+    line-height: 1.5;
+}
+
+/* Center Column (Fixed 3D Viewer) */
+.center-column {
+    flex: 2; /* Take 2 parts width (wider than sides) */
+    position: relative;
+    background: var(--viewer-bg);
+    border-left: 2px solid rgba(255,255,255,0.8);
+    border-right: 2px solid rgba(255,255,255,0.8);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* The container for the Three.js Canvas */
+#canvas-wrapper {
+    flex: 1; /* Fill available vertical space */
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Speech Bubble Overlay */
+.speech-bubble {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    max-width: 200px;
+    background: var(--primary-white);
+    color: var(--primary-violet);
+    padding: 12px 20px;
+    border-radius: 20px;
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-weight: 600;
+    font-size: 0.95rem;
+    pointer-events: none; /* Let clicks pass through */
+    opacity: 1;
+    transition: opacity 0.4s ease;
+    z-index: 10;
+}
+
+.speech-bubble.hidden {
+    opacity: 0;
+}
+
+/* Controls Bar Overlay */
+.controls-bar {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 25px;
+    border-radius: 30px;
+    display: flex;
+    gap: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+.controls-bar button {
+    background: var(--primary-white);
+    color: var(--primary-violet);
+    border: 2px solid var(--primary-violet);
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.controls-bar button:hover {
+    background: var(--primary-violet);
+    color: var(--primary-white);
+    box-shadow: 0 4px 10px rgba(43, 23, 74, 0.3);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+        overflow-y: auto; /* Allow main container scroll on mobile */
+    }
+    .side-column {
+        flex: none; /* Auto height based on content */
+        height: auto;
+        overflow-y: visible;
+    }
+    .center-column {
+        height: 60vh; /* Fixed height for viewer on mobile */
+        flex: none;
+        order: -1; /* Move viewer to top below header */
+        border: none;
+        border-bottom: 2px solid white;
+    }
+}

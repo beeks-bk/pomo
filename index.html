@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>POMO – The Personal Healthcare Companion</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>POMO – The Personal Healthcare Companion</h1>
+    </header>
+
+    <div class="main-container">
+        
+        <aside class="side-column left-col">
+            <div class="port-box">
+                <h2>Challenge Statement</h2>
+                <p>😷 Millions with episodic conditions (epilepsy, asthma, migraines, heart issues) lack affordable monitoring & timely intervention<br>
+⚡ Need real-time vital monitoring + emergency alerts<br>
+🗣️ Require multilingual guidance, emotional support, medication reminders<br>
+🔒 Need secure health data that stays under the patient's control</p>
+            </div>
+            <div class="port-box">
+                <h2>Technical Highlights</h2>
+                <p>🛠️ Dual design: Wrist wearable + tabletop robot<br>
+⚙️ Core: 2x ESP32, MAX30102 sensor, SSD1306 OLED eyes<br>
+🔊 Audio: DFPlayer Mini + speaker<br>
+📡 Connectivity: SIM800L GSM for emergencies<br>
+🔋 Features: AI safety checks, encrypted data, ABDM alignment</p>
+            </div>
+            <div class="port-box">
+                <h2>Feasibility & Viability</h2>
+                <p>✅ Technically achievable with available sensors/AI<br>
+🏠 Practical for home use, minimal effort<br>
+⏱️ Strong need: Seconds count in sudden episodes<br>
+📱 Easy adoption: Simple interface<br>
+🌐 Supported by MoHFW, ABDM, WHO, UNICEF</p>
+            </div>
+            <div class="port-box">
+                <h2>Research Status</h2>
+                <p>🧠 Stroke: research about half done<br>
+🔬 Migraine: study is ongoing<br>
+🩺 Starts with one disease first, then the model will be trained to work for multiple diseases<br>
+✅ Working now: vital monitoring, alerts, reminders, emotional support, emergency escalation<br>
+🚧 Stroke and migraine prediction are under research, not finished features</p>
+            </div>
+             
+        </aside>
+
+        <main class="center-column" id="viewer-container">
+            <div id="canvas-wrapper"></div>
+            
+            <div id="speech-bubble" class="speech-bubble hidden">Hi there!</div>
+
+            <div class="controls-bar">
+                <button id="btn-reset">Reset View</button>
+                <button id="btn-autorotate">Auto rotate: On</button>
+                <button id="btn-fullscreen">Fullscreen</button>
+            </div>
+        </main>
+
+        <aside class="side-column right-col">
+             <div class="port-box">
+                <h2>Proposed Solution</h2>
+                <p>🤖 POMO: Robot companion for episodic conditions & rural India access<br>
+⌚ Wrist wearable tracks vital signs<br>
+🗣️ Tabletop robot talks, listens, offers emotional support<br>
+🚨 Handles emergencies, medication reminders, encrypted data & AI safety</p>
+            </div>
+           
+            <div class="port-box">
+                <h2>How It Helps?</h2>
+                <p>🔍 Early detection of warning signs<br>
+⏰ Personalized medication reminders<br>
+❤️ Emotional support via expressive eyes & warm voice<br>
+🌍 Multilingual interface for elders/non-tech users<br>
+👫 Friendly companionship & encouragement</p>
+            </div>
+            <div class="port-box">
+                <h2>Impact & Benefits</h2>
+                <p>😌 Reduces anxiety/loneliness & episodes<br>
+🏡 Enables independence for elderly/chronic patients<br>
+⚠️ Early warnings prevent hospital visits<br>
+💰 Lower medical costs<br>
+🔐 Patient data stays encrypted and under patient control (ABDM-aligned)</p>
+            </div>
+          
+            <div class="port-box">
+                <h2>Competitor Analysis & Cost</h2>
+                <p>
+🏆 POMO edges: Physical robot, patient data control, robot + web access<br>
+⚔️ Beats Babylon, Philips, MedVault, Apple Health in key features<br>
+🖥️ Interface: Robot + Web<br>
+💸 Prototype cost: ₹2,500–2,900.</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
