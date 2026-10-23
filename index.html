@@ -25,37 +25,52 @@
         
         <aside class="side-column left-col">
             <div class="port-box">
-                <h2>Challenge Statement</h2>
-                <p>😷 Millions with episodic conditions (epilepsy, asthma, migraines, heart issues) lack affordable monitoring & timely intervention<br>
-⚡ Need real-time vital monitoring + emergency alerts<br>
-🗣️ Require multilingual guidance, emotional support, medication reminders<br>
-🔒 Need secure health data that stays under the patient's control</p>
+                <h2>Problem Statement</h2>
+                <p>🏥 Affordable continuous monitoring and emergency response for people with episodic conditions<br>
+😷 Stroke risk, migraines, asthma, panic attacks<br>
+📍 Help is often not nearby, especially in rural India<br>
+🚫 No affordable monitoring, emotional support or data control; existing tools are app/web only</p>
             </div>
             <div class="port-box">
-                <h2>Technical Highlights</h2>
-                <p>🛠️ Dual design: Wrist wearable + tabletop robot<br>
-⚙️ Core: 2x ESP32, MAX30102 sensor, SSD1306 OLED eyes<br>
-🔊 Audio: DFPlayer Mini + speaker<br>
-📡 Connectivity: SIM800L GSM for emergencies<br>
-🔋 Features: AI safety checks, encrypted data, ABDM alignment</p>
+                <h2>Proposed Solution</h2>
+                <p>⌚ Wrist wearable + 🤖 tabletop robot<br>
+🔍 Screens for risk and warns early<br>
+🗣️ Runs a spoken stroke (FAST) check<br>
+⏰ Reminds medicines and calls for help</p>
             </div>
             <div class="port-box">
-                <h2>Feasibility & Viability</h2>
-                <p>✅ Technically achievable with available sensors/AI<br>
-🏠 Practical for home use, minimal effort<br>
-⏱️ Strong need: Seconds count in sudden episodes<br>
-📱 Easy adoption: Simple interface<br>
-🌐 Supported by MoHFW, ABDM, WHO, UNICEF</p>
+                <h2>Innovation &amp; Uniqueness</h2>
+                <p>🤖 Physical companion: speaks, listens, shows emotion, runs a voice stroke check<br>
+📶 Works offline: BLE link and on-device checks, runs through power cuts and poor internet<br>
+💸 Affordable: low-cost open-source parts, about ₹4,500–6,500 in total<br>
+🔐 Patient-owned data: encrypted, consent-based sharing, ABDM-aligned</p>
             </div>
             <div class="port-box">
-                <h2>Research Status</h2>
-                <p>🧠 Stroke: research about half done<br>
-🔬 Migraine: study is ongoing<br>
-🩺 Starts with one disease first, then the model will be trained to work for multiple diseases<br>
-✅ Working now: vital monitoring, alerts, reminders, emotional support, emergency escalation<br>
-🚧 Stroke and migraine prediction are under research, not finished features</p>
+                <h2>How It Addresses the Problem</h2>
+                <p>🩺 Risk screening: stroke FAST voice check with fall and pulse alerts; migraine trigger and early-symptom tracking<br>
+⏰ Personalised voice medication reminders<br>
+❤️ Emotional support via animated eyes and a warm voice<br>
+🌍 Multilingual voice for elders and non-technical users<br>
+🚨 Emergency escalation: stroke red flags send SMS/calls to family or hospital at once<br>
+🔒 Encrypted storage; sharing only with the patient's permission</p>
             </div>
-             
+            <div class="port-box">
+                <h2>Flow</h2>
+                <p>1️⃣ Sense vitals, motion and triggers<br>
+2️⃣ BLE transfer to the robot<br>
+3️⃣ Rule-based risk check<br>
+4️⃣ Stroke: spoken FAST check → instant SMS/call with onset time<br>
+5️⃣ Migraine: voice warning, medicine reminder, log → escalate if worse<br>
+6️⃣ Daily care</p>
+            </div>
+            <div class="port-box">
+                <h2>Technical Approach</h2>
+                <p>📡 Sensing: MAX30102 (heart rate/SpO2), MPU6050 (motion), skin temperature; robot adds mic, BME280 and light sensing<br>
+🧠 Analysis: ESP32 runs rule-based checks on separate stroke and migraine paths<br>
+🚑 Escalation: failed FAST check or no reply → 4G modem sends SMS/calls<br>
+🔊 Care: DFPlayer Mini voice reminders, symptom log, animated OLED eyes<br>
+🔋 Power: 3.3 V deep-sleep Li-Po wearable; 5 V robot with capacitor buffer for modem spikes</p>
+            </div>
         </aside>
 
         <main class="center-column" id="viewer-container">
@@ -71,38 +86,55 @@
         </main>
 
         <aside class="side-column right-col">
-             <div class="port-box">
-                <h2>Proposed Solution</h2>
-                <p>🤖 POMO: Robot companion for episodic conditions & rural India access<br>
-⌚ Wrist wearable tracks vital signs<br>
-🗣️ Tabletop robot talks, listens, offers emotional support<br>
-🚨 Handles emergencies, medication reminders, encrypted data & AI safety</p>
-            </div>
-           
             <div class="port-box">
-                <h2>How It Helps?</h2>
-                <p>🔍 Early detection of warning signs<br>
-⏰ Personalized medication reminders<br>
-❤️ Emotional support via expressive eyes & warm voice<br>
-🌍 Multilingual interface for elders/non-tech users<br>
-👫 Friendly companionship & encouragement</p>
+                <h2>Business Idea</h2>
+                <p>💡 An affordable healthcare companion (about ₹4,500–6,500 prototype cost) that moves care from reactive to proactive, continuous monitoring<br>
+🏥 Market: hospital home-care programmes (Apollo, Fortis), MoHFW/ABDM-aligned efforts, NGOs and rural health programmes<br>
+💰 Revenue: device sales; hospital, care-centre and NGO bundles; optional consent-based caregiver/doctor sync<br>
+📊 Pilot metrics: missed-dose reduction, false-alert rate, onset-to-alert time, FAST-check completion rate</p>
             </div>
             <div class="port-box">
-                <h2>Impact & Benefits</h2>
-                <p>😌 Reduces anxiety/loneliness & episodes<br>
-🏡 Enables independence for elderly/chronic patients<br>
-⚠️ Early warnings prevent hospital visits<br>
-💰 Lower medical costs<br>
-🔐 Patient data stays encrypted and under patient control (ABDM-aligned)</p>
+                <h2>Impact &amp; Benefits</h2>
+                <p>😌 Daily emotional support reduces anxiety and loneliness<br>
+🏡 Elderly and chronic patients can live safely at home<br>
+💊 Consistent tracking aims to cut missed doses<br>
+⚠️ Faster stroke alerts and early warnings aim to cut delays and hospital visits<br>
+💰 Lower medical costs, less burden on families<br>
+🔐 Patients control their own records, in line with ABDM</p>
             </div>
-          
             <div class="port-box">
-                <h2>Competitor Analysis & Cost</h2>
+                <h2>Supported SDGs</h2>
+                <p>3️⃣ Good Health and Well-being<br>
+9️⃣ Industry, Innovation and Infrastructure<br>
+🔟 Reduced Inequalities<br>
+1️⃣6️⃣ Peace, Justice and Strong Institutions<br>
+1️⃣7️⃣ Partnerships for the Goals</p>
+            </div>
+            <div class="port-box">
+                <h2>Competitor Analysis</h2>
+                <p>🏆 POMO edges: physical robot, patient data control, stroke/migraine risk screening, robot + web access<br>
+🖥️ Interface: Robot + Web</p>
+                <img src="POMO_Competitor_Analysis.png" alt="Competitor analysis table comparing POMO with Babylon, Philips, MedVault and Apple Health" style="max-width:100%; height:auto; margin-top:8px;">
+            </div>
+            <div class="port-box">
+                <h2>Research Status</h2>
+                <p>✅ Today: rule-based stroke and migraine screening with early alerts (not diagnosis)<br>
+🔬 ML prediction is under research<br>
+🩺 Being validated for one condition first, then extended to multiple conditions</p>
+            </div>
+            <div class="port-box">
+                <h2>References</h2>
                 <p>
-🏆 POMO edges: Physical robot, patient data control, robot + web access<br>
-⚔️ Beats Babylon, Philips, MedVault, Apple Health in key features<br>
-🖥️ Interface: Robot + Web<br>
-💸 Prototype cost: ₹2,500–2,900.</p>
+1. <a href="https://pubmed.ncbi.nlm.nih.gov/40439800/" target="_blank" rel="noopener">AI-Powered Wearable Technologies for Early Stroke Detection</a><br>
+2. <a href="https://www.who.int/news-room/fact-sheets/detail/headache-disorders" target="_blank" rel="noopener">Migraine and Other Headache Disorders – WHO</a><br>
+3. <a href="https://www.stroke.org/FAST" target="_blank" rel="noopener">F.A.S.T. Stroke Warning Signs – American Stroke Association</a><br>
+4. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12687821/" target="_blank" rel="noopener">Can Smartwatches Predict Migraines?</a><br>
+5. <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/max30102.pdf" target="_blank" rel="noopener">MAX30102 Datasheet</a><br>
+6. <a href="https://documentation.espressif.com/esp32_datasheet_en.html" target="_blank" rel="noopener">ESP32 Datasheet</a><br>
+7. <a href="https://en.simcom.com/product/SIM7600X.html" target="_blank" rel="noopener">SIM7600 4G LTE Module – SIMCom</a><br>
+8. <a href="https://www.india.gov.in/category/health-wellness/subcategory/health-care-promotion-products/details/health-data-management-policy-of-ayushman-bharat-digital-mission-abdm" target="_blank" rel="noopener">ABDM Health Data Management Policy</a><br>
+9. <a href="https://www.philips.co.in/healthcare/patient-monitoring" target="_blank" rel="noopener">Philips Patient Monitoring</a><br>
+10. <a href="https://pubmed.ncbi.nlm.nih.gov/38430662/" target="_blank" rel="noopener">Socially Assistive Robots and Health and Wellbeing – Systematic Review</a></p>
             </div>
         </aside>
 
